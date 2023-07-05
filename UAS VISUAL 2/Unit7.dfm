@@ -1,9 +1,9 @@
-object Form6: TForm6
+object Form7: TForm7
   Left = 192
   Top = 125
   Width = 928
   Height = 480
-  Caption = 'Form6'
+  Caption = 'Form7'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,11 +20,11 @@ object Form6: TForm6
     Height = 13
   end
   object l1: TLabel
-    Left = 84
+    Left = 72
     Top = 12
-    Width = 22
+    Width = 57
     Height = 15
-    Caption = 'NIK'
+    Caption = 'ID SISWA'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -33,11 +33,11 @@ object Form6: TForm6
     ParentFont = False
   end
   object l6: TLabel
-    Left = 328
-    Top = 8
-    Width = 39
+    Left = 304
+    Top = 12
+    Width = 91
     Height = 16
-    Caption = 'NAMA'
+    Caption = 'ID ORANG TUA'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -46,11 +46,11 @@ object Form6: TForm6
     ParentFont = False
   end
   object l7: TLabel
-    Left = 332
+    Left = 308
     Top = 48
-    Width = 48
+    Width = 82
     Height = 16
-    Caption = 'STATUS'
+    Caption = 'KETERANGAN'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -61,9 +61,9 @@ object Form6: TForm6
   object l10: TLabel
     Left = 72
     Top = 52
-    Width = 39
+    Width = 47
     Height = 15
-    Caption = 'LEVEL'
+    Caption = 'STATUS'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -133,7 +133,7 @@ object Form6: TForm6
     TabOrder = 6
   end
   object e_2: TEdit
-    Left = 396
+    Left = 404
     Top = 8
     Width = 169
     Height = 21
@@ -148,11 +148,11 @@ object Form6: TForm6
     TabOrder = 8
     Text = '---PILIH STATUS---'
     Items.Strings = (
-      'ADMIN'
-      'MEMBER')
+      'KANDUNG'
+      'TIRI')
   end
   object cbb2: TComboBox
-    Left = 400
+    Left = 408
     Top = 48
     Width = 169
     Height = 21
@@ -160,14 +160,14 @@ object Form6: TForm6
     TabOrder = 9
     Text = '---PILIH STATUS---'
     Items.Strings = (
-      'GURU'
-      'MURID')
+      'AYAH '
+      'IBU')
   end
   object dbgrd1: TDBGrid
-    Left = 0
-    Top = 100
-    Width = 829
-    Height = 317
+    Left = 4
+    Top = 80
+    Width = 817
+    Height = 349
     DataSource = ds1
     TabOrder = 10
     TitleFont.Charset = DEFAULT_CHARSET
@@ -179,28 +179,29 @@ object Form6: TForm6
     Columns = <
       item
         Expanded = False
-        FieldName = 'Id_user'
+        FieldName = 'Id_hubungan'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'Nik'
+        FieldName = 'Id_siswa'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'Nama'
+        FieldName = 'Id_orgtua'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Status hub anak'
         Width = 100
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'Level'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'Status'
+        FieldName = 'Keterangan'
+        Width = 100
         Visible = True
       end>
   end
@@ -222,8 +223,7 @@ object Form6: TForm6
     Connection = con1
     Active = True
     SQL.Strings = (
-      'select * from user'
-      '')
+      'select * from hubungan')
     Params = <>
     Left = 396
     Top = 372
@@ -250,7 +250,7 @@ object Form6: TForm6
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 45097.373740509300000000
-    ReportOptions.LastChange = 45112.776925787040000000
+    ReportOptions.LastChange = 45112.787200266200000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -334,7 +334,7 @@ object Form6: TForm6
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'NIK')
+            'ID SISWA')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -351,7 +351,7 @@ object Form6: TForm6
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'NAMA')
+            'ID ORANG TUA')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -368,7 +368,7 @@ object Form6: TForm6
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'LEVEL')
+            'HUBUNGAN STATUS')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -385,7 +385,7 @@ object Form6: TForm6
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'STATUS')
+            'KETERANGAN')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -401,7 +401,7 @@ object Form6: TForm6
           Width = 98.267780000000000000
           Height = 71.811070000000000000
           ShowHint = False
-          DataField = 'Id_user'
+          DataField = 'Id_hubungan'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset'
           Font.Charset = DEFAULT_CHARSET
@@ -412,7 +412,7 @@ object Form6: TForm6
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset."Id_user"]')
+            '[frxDBDataset."Id_hubungan"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -421,7 +421,7 @@ object Form6: TForm6
           Width = 166.299320000000000000
           Height = 71.811070000000000000
           ShowHint = False
-          DataField = 'Nik'
+          DataField = 'Id_siswa'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset'
           Font.Charset = DEFAULT_CHARSET
@@ -432,7 +432,7 @@ object Form6: TForm6
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset."Nik"]')
+            '[frxDBDataset."Id_siswa"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -441,7 +441,7 @@ object Form6: TForm6
           Width = 181.417440000000000000
           Height = 71.811070000000000000
           ShowHint = False
-          DataField = 'Level'
+          DataField = 'Status hub anak'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset'
           Font.Charset = DEFAULT_CHARSET
@@ -452,7 +452,7 @@ object Form6: TForm6
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset."Level"]')
+            '[frxDBDataset."Status hub anak"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -461,7 +461,7 @@ object Form6: TForm6
           Width = 185.196970000000000000
           Height = 71.811070000000000000
           ShowHint = False
-          DataField = 'Status'
+          DataField = 'Keterangan'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset'
           Font.Charset = DEFAULT_CHARSET
@@ -472,7 +472,7 @@ object Form6: TForm6
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset."Status"]')
+            '[frxDBDataset."Keterangan"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -481,7 +481,7 @@ object Form6: TForm6
           Width = 196.535560000000000000
           Height = 71.811070000000000000
           ShowHint = False
-          DataField = 'Nama'
+          DataField = 'Id_orgtua'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset'
           Font.Charset = DEFAULT_CHARSET
@@ -492,7 +492,7 @@ object Form6: TForm6
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset."Nama"]')
+            '[frxDBDataset."Id_orgtua"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -503,7 +503,7 @@ object Form6: TForm6
     Connection = con1
     Active = True
     SQL.Strings = (
-      'select * from user')
+      'select * from hubungan')
     Params = <>
     Left = 572
     Top = 372
